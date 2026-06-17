@@ -1,0 +1,1 @@
+{"version":3,"file":"Course.d.ts","sourceRoot":"","sources":["../../models/Course.ts"],"names":[],"mappings":"AAAA,OAAO,OAAO,GAAG,QAAQ,WAAW,CAAC,CAAC;AAGtC,qBAAa,MAAM;IAEJ,KAAK,EAAG,MAAM;IACd,OAAO,EAAG,OAAO,CAAC,OAAO;gBADzB,KAAK,EAAG,MAAM,EACd,OAAO,EAAG,OAAO,CAAC,OAAO;CAEvC"}
