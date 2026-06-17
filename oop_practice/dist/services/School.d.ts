@@ -10,4 +10,4 @@ export declare class School {
     addCourse(course: Course): void;
     showAllStudent(): void;
 }
-//# sourceMappingURL=School.d.ts.map
+//# sourceMappingURL=School.d.ts.map .
