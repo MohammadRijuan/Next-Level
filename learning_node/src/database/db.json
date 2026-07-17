@@ -1,0 +1,64 @@
+
+[
+  {
+    "id": 1,
+    "name": "Laptop",
+    "price": 750,
+    "category": "Electronics"
+  },
+  {
+    "id": 2,
+    "name": "Smartphone",
+    "price": 500,
+    "category": "Electronics"
+  },
+  {
+    "id": 3,
+    "name": "Headphones",
+    "price": 80,
+    "category": "Accessories"
+  },
+  {
+    "id": 4,
+    "name": "Keyboard",
+    "price": 45,
+    "category": "Accessories"
+  },
+  {
+    "id": 5,
+    "name": "Mouse",
+    "price": 25,
+    "category": "Accessories"
+  },
+  {
+    "id": 6,
+    "name": "Monitor",
+    "price": 220,
+    "category": "Electronics"
+  },
+  {
+    "id": 7,
+    "name": "Backpack",
+    "price": 40,
+    "category": "Bags"
+  },
+  {
+    "id": 8,
+    "name": "Water Bottle",
+    "price": 15,
+    "category": "Lifestyle"
+  },
+  {
+    "id": 9,
+    "name": "Notebook",
+    "price": 8,
+    "category": "Stationery"
+  },
+  {
+    "id": 10,
+    "name": "Desk Lamp",
+    "price": 35,
+    "category": "Home"
+  }
+]
+

@@ -1,14 +1,15 @@
 import { createServer, IncomingMessage, ServerResponse, type Server } from "http";
+import { RouteHandler } from "./routes/route";
 
 const server: Server = createServer((req: IncomingMessage, res: ServerResponse) => {
 
     // req.url -> The path requested by the client ("/", "/products", etc.)
     // req.method -> The HTTP method (GET, POST, PUT, PATCH, DELETE, etc.)
 
-    const url = req.url;
-    const method = req.method;
+    // const url = req.url;
+    // const method = req.method;
 
-    if (url === "/" && method === "GET") {
+    // if (url === "/" && method === "GET") {
 
         // Sends the HTTP status code and response headers.
         // Here, status code = 200 (OK)
@@ -21,31 +22,35 @@ const server: Server = createServer((req: IncomingMessage, res: ServerResponse) 
 
         // if u want to show json format
         // application/json tells the browser that the response is JSON.
-        res.writeHead(200, { "Content-Type": "application/json" });
+        // res.writeHead(200, { "Content-Type": "application/json" });
 
         // JSON.stringify() converts a JavaScript object into a JSON string,
         // because res.end() cannot send a plain JavaScript object directly.
-        res.end(JSON.stringify({
-            message: "root route"
-        }));
 
-    }
-    else if (url?.startsWith("/products")){
-        res.writeHead(200,{"content-type": "application/json"})
-        res.end(JSON.stringify({
-            message:"root route"
-    }))
-    }
+        // res.end(JSON.stringify({
+        //     message: "root route"
+        // }));
+
+    // }
+    // else if (url?.startsWith("/products")){
+    //     res.writeHead(200,{"content-type": "application/json"})
+    //     res.end(JSON.stringify({
+    //         message:"root route"
+    // }))
+    // }
     
-    else {
+    // else {
 
-        // Better to send a response instead of only logging.
-        // Status code 404 means the requested route was not found.
-        res.writeHead(404, { "Content-Type": "text/plain" });
+    //     // Better to send a response instead of only logging.
+    //     // Status code 404 means the requested route was not found.
+    //     res.writeHead(404, { "Content-Type": "text/plain" });
 
-        // Sends the error message and closes the response.
-        res.end("Route not found");
-    }
+    //     // Sends the error message and closes the response.
+    //     res.end("Route not found");
+    // }
+
+
+    RouteHandler(req,res)
 });
 
 server.listen(5000, () => {
