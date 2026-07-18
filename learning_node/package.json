@@ -16,6 +16,7 @@
     "typescript": "^7.0.2"
   },
   "dependencies": {
+    "dotenv": "^17.4.2",
     "tsx": "^4.23.0",
     "undici-types": "^8.3.0"
   }
