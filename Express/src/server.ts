@@ -5,14 +5,15 @@ import express, {
 } from "express";
 
 const app: Application = express();
-const port = 3000;
+const port = config.port;
 
 import { Pool } from "pg";
+import config from "./config";
 
 // connect neon db through installing npm i --save-dev @types/pg
 const pool = new Pool({
-  connectionString:
-    "postgresql://neondb_owner:npg_wQWZuq9rR7Nv@ep-calm-brook-aveydmjk-pooler.c-11.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require",
+  connectionString: config.connection_string,
+  
 });
 // initialize the database
 const initDb = async () => {
