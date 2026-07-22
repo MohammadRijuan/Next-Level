@@ -1,15 +1,19 @@
 import type { Request } from "express";
 import { pool } from "../../db";
 import type { Iuser } from "./user.interface";
+import bcrypt from "bcryptjs";
 
 const createUserIntoDb = async (payload: Iuser) => {
   const { name, email, password, age } = payload;
 
+  const hashPassword = await bcrypt.hash(password,10)
+
   const result = await pool.query(
     `INSERT INTO USERS(name,email,password,age) VALUES($1,$2,$3,$4)
     RETURNING * `,
-    [name, email, password, age],
+    [name, email, hashPassword, age],
   );
+  delete result.rows[0].password
 
   return result;
 };
@@ -28,6 +32,8 @@ const getSingleUserFromDb = async (id: string) => {
     SELECT * FROM USERS WHERE id=$1`,
     [id],
   );
+
+  delete result.rows[0].password
   return result;
 };
 

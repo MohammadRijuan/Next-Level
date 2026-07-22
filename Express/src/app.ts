@@ -9,6 +9,8 @@ const app: Application = express();
 // import config from "./config";
 import { pool } from "./db";
 import { userRoute } from "./modules/user/user.route";
+import { profileRoute } from "./modules/profile/profile.route";
+import { authRoute } from "./modules/auth/auth.route";
 
 
 
@@ -29,6 +31,12 @@ app.get("/", (req: Request, res: Response) => {
 
 // user route
 app.use('/api/users',userRoute)
+
+// profile 
+app.use('/api/profile',profileRoute)
+
+// authentication
+app.use('/api/auth',authRoute)
 
 
 
