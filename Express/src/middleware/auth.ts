@@ -3,8 +3,11 @@ import config from "../config";
 import jwt, { type JwtPayload } from "jsonwebtoken";
 import { pool } from "../db";
 
-const auth = () => {
+type Roles = "Admin" | "agent" | "user"
+
+const auth = (...roles:Roles[]) => {
   return async (req: Request, res: Response, next: NextFunction) => {
+    console.log(roles)
     try {
       // console.log("This is a protected route");
       // console.log(req.headers.authorization)
@@ -48,6 +51,14 @@ const auth = () => {
         res.status(403).json({
           success: false,
           message: "forbidden!!",
+        });
+      }
+
+
+      if(roles.length && !roles.included(user.role)){
+        res.status(403).json({
+          success: false,
+          message: "forbidden!! this user dont have access",
         });
       }
 

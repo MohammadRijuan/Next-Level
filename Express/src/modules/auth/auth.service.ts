@@ -35,6 +35,7 @@ const loginUserIntoDb = async (payload: {
           id : user.id,
           name: user.name,
           is_Active: user.is_Active,
+          role:user.role,
           email: user.email
         }
 

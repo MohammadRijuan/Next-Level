@@ -18,7 +18,8 @@ export const initDb = async () => {
         AGE INT,
         IS_ACTIVE BOOLEAN DEFAULT TRUE,
         CREATED_AT TIMESTAMP DEFAULT NOW(),
-        UPDATED_AT TIMESTAMP DEFAULT NOW()
+        UPDATED_AT TIMESTAMP DEFAULT NOW(),
+        ROLE VARCHAR(10) DEFAULT 'user'
     );
 `);
 
