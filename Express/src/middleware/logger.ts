@@ -1,0 +1,15 @@
+import type { NextFunction, Request, Response } from "express"
+import fs from "fs"
+
+
+const logger = (req:Request, res:Response, next:NextFunction) => {
+
+  console.log("method - url - time ",req.method,req.url,Date.now())
+  const log= `\nTime - ${Date.now()} => method - ${req.method} => url - ${req.url}\n`
+
+  fs.appendFile("logger.txt",log,(err) => {})
+  next();
+}
+
+
+export default logger

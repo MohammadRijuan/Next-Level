@@ -12,6 +12,9 @@ import { userRoute } from "./modules/user/user.route";
 import { profileRoute } from "./modules/profile/profile.route";
 import { authRoute } from "./modules/auth/auth.route";
 
+import fs from "fs"
+import logger from "./middleware/logger";
+
 
 
 app.use(express.json());
@@ -37,6 +40,10 @@ app.use('/api/profile',profileRoute)
 
 // authentication
 app.use('/api/auth',authRoute)
+
+
+// custom middleware - logger middleware
+app.use(logger);
 
 
 

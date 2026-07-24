@@ -1,0 +1,8 @@
+
+Time - 1784824722798 => method GET => url - /api/user
+
+Time - 1784824837130 => method - GET => url - /api/u
+
+Time - 1784825040495 => method - GET => url - /api/user
+
+Time - 1784825046264 => method - GET => url - /api/

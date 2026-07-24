@@ -6,6 +6,7 @@ import { userService } from "./user.service";
 
 const createUser = async (req: Request, res: Response) => {
   //   console.log(req.body);
+    console.log(req.user);
 
   //   const { name, email, password, age } = req.body;
 
