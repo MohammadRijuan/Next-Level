@@ -3,7 +3,7 @@ import config from "../config";
 import jwt, { type JwtPayload } from "jsonwebtoken";
 import { pool } from "../db";
 
-type Roles = "Admin" | "agent" | "user"
+type Roles = "admin" | "agent" | "user"
 
 const auth = (...roles:Roles[]) => {
   return async (req: Request, res: Response, next: NextFunction) => {
@@ -55,7 +55,7 @@ const auth = (...roles:Roles[]) => {
       }
 
 
-      if(roles.length && !roles.included(user.role)){
+      if(roles.length && !roles.includes(user.role)){
         res.status(403).json({
           success: false,
           message: "forbidden!! this user dont have access",

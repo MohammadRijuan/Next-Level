@@ -5,9 +5,18 @@ const loginUser = async (req: Request, res: Response) => {
   try {
     const result = await authService.loginUserIntoDb(req.body);
 
-    res.status(201).json({
+    const {refreshToken} = result
+
+    res.cookie("refreshToken",refreshToken,{
+      secure:false,
+      httpOnly:true,
+      sameSite:"lax" // lax means its applicable for only get request not will be for post request
+
+    })
+
+    res.status(200).json({
       success: true,
-      message: "user retrived succesfully",
+      message: "user login succesfully",
       data: result,
     });
   } catch (error: any) {
