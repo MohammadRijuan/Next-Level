@@ -11,12 +11,16 @@ import { pool } from "./db";
 import { userRoute } from "./modules/user/user.route";
 import { profileRoute } from "./modules/profile/profile.route";
 import { authRoute } from "./modules/auth/auth.route";
+import CookieParser from "cookie-parser"
+import cors from "cors"
 
 import fs from "fs"
 import logger from "./middleware/logger";
+import globalErrorHandler from "./errorHandler/ErrorHandler";
 
 
 
+app.use(CookieParser());
 app.use(express.json());
 // for getting text
 app.use(express.text());
@@ -44,6 +48,15 @@ app.use('/api/auth',authRoute)
 
 // custom middleware - logger middleware
 app.use(logger);
+
+// cors
+
+const corsOptions = {
+  origin: 'http://localhost:5000',
+  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+}
+app.use(cors(corsOptions));
+
 
 
 
@@ -83,5 +96,9 @@ app.delete("/api/users/:id", async (req: Request, res: Response) => {
 });
 
 
+
+
+// Global Error Handling Middleware
+app.use(globalErrorHandler);
 
 export default app;
