@@ -1,0 +1,28 @@
+$kind: http-request
+url: "{{base_url}}/v1/users/cmrhh5069000054gvenhu90c0/restore"
+method: POST
+queryParams:
+  - key: email
+    value: superadmin@rusik.gov.my
+    disabled: true
+  - key: searchTerm
+    value: super
+    disabled: true
+body:
+  type: json
+  content: "{\r
+
+    \    \"firstName\":\"Nurul Islam\"\r
+
+    \    // \"email\":\"nur@gmail.com\",\r
+
+    \    // \"password\":\"123456\",\r
+
+    \    // \"role\":\"OFFICER\"\r
+
+    }"
+auth:
+  type: bearer
+  credentials:
+    token: "{{accessToken}}"
+order: 6000

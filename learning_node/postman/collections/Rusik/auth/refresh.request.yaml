@@ -1,0 +1,13 @@
+$kind: http-request
+url: "{{base_url}}/v1/auth/refresh"
+method: POST
+queryParams:
+  - key: email
+    value: superadmin@rusik.gov.my
+    disabled: true
+  - key: searchTerm
+    value: super
+    disabled: true
+auth:
+  type: noauth
+order: 2000

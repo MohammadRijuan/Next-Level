@@ -1,0 +1,25 @@
+$kind: http-request
+url: "{{base_url}}/v1/stored-objects"
+method: GET
+queryParams:
+  - key: email
+    value: superadmin@rusik.gov.my
+    disabled: true
+  - key: searchTerm
+    value: super
+    disabled: true
+body:
+  type: json
+  content: "{\r
+
+    \    \"email\":\"superadmin@rusik.gov.my\",\r
+
+    \    \"password\":\"password123\"\r
+
+    }"
+auth:
+  type: bearer
+  credentials:
+    token: "{{accessToken}}"
+settings: {}
+order: 1000

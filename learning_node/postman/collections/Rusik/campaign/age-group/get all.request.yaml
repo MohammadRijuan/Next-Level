@@ -1,0 +1,28 @@
+$kind: http-request
+url: "{{base_url}}/v1/age-group"
+method: GET
+queryParams:
+  - key: id
+    value: superadmin@rusik.gov.my
+    disabled: true
+  - key: searchTerm
+    value: super
+    disabled: true
+  - key: name
+    value: createdAt
+    disabled: true
+  - key: slug
+    value: desc
+    disabled: true
+  - key: type
+    value: "2"
+    disabled: true
+  - key: stateId
+    value: cmrnjfb6k0009swgvd3ze6mjb
+    disabled: true
+  - key: limit
+    value: "1000"
+    disabled: true
+auth:
+  type: noauth
+order: 2000

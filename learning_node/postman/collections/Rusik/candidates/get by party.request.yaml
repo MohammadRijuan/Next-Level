@@ -1,0 +1,27 @@
+$kind: http-request
+url: "{{base_url}}/v1/candidates/by-party/cmrnjfb620001swgvfwdtrirt"
+method: GET
+queryParams:
+  - key: email
+    value: superadmin@rusik.gov.my
+    disabled: true
+  - key: searchTerm
+    value: super
+    disabled: true
+body:
+  type: json
+  content: "{\r
+
+    \    \"firstName\":\"Nurul\",\r
+
+    \    \"email\":\"nur@gmail.com\",\r
+
+    \    \"password\":\"123456\",\r
+
+    \    \"role\":\"OFFICER\"\r
+
+    }"
+auth:
+  type: noauth
+settings: {}
+order: 7000

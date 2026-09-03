@@ -1,0 +1,26 @@
+$kind: http-request
+url: "{{base_url}}/v1/districts/cmrlmm8260018ecgv3bzdptux"
+method: PATCH
+queryParams:
+  - key: email
+    value: superadmin@rusik.gov.my
+    disabled: true
+  - key: searchTerm
+    value: super
+    disabled: true
+body:
+  type: json
+  content: "{\r
+
+    \    \"stateId\":\"cmrlmm7th0000ecgvbz0qzuxm\",\r
+
+    \    \"name\":\"Noakhali\",\r
+
+    \    \"code\":\"noakhali\"\r
+
+    }"
+auth:
+  type: bearer
+  credentials:
+    token: "{{accessToken}}"
+order: 6000

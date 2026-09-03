@@ -1,0 +1,25 @@
+$kind: http-request
+url: "{{base_url}}/v1/candidate-scores"
+method: GET
+queryParams:
+  - key: status
+    value: APPROVED
+    disabled: true
+  - key: categoryId
+    value: null
+    disabled: true
+  - key: subDistrictId
+    value: null
+    disabled: true
+  - key: districtId
+    value: null
+    disabled: true
+  - key: stateId
+    value: null
+    disabled: true
+  - key: status
+    value: null
+    disabled: true
+auth:
+  type: noauth
+order: 1000

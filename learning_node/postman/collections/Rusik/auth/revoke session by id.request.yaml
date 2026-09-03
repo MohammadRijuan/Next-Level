@@ -1,0 +1,22 @@
+$kind: http-request
+url: "{{base_url}}/v1/auth/sessions/cmrjafjfz0001i8gv0ql1xtk1"
+method: DELETE
+queryParams:
+  - key: email
+    value: superadmin@rusik.gov.my
+    disabled: true
+  - key: searchTerm
+    value: super
+    disabled: true
+body:
+  type: json
+  content: "{\r
+
+    \    \"refreshToken\":\"{{refreshToken}}\"\r
+
+    }"
+auth:
+  type: bearer
+  credentials:
+    token: "{{accessToken}}"
+order: 8000

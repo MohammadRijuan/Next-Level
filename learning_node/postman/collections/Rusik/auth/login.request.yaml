@@ -1,0 +1,30 @@
+$kind: http-request
+url: "{{base_url}}/v1/auth/login"
+method: POST
+queryParams:
+  - key: email
+    value: superadmin@rusik.gov.my
+    disabled: true
+  - key: searchTerm
+    value: super
+    disabled: true
+body:
+  type: json
+  content: "{\r
+
+    \    \"email\": \"superadmin@rusik.gov.my\",\r
+
+    \    // \"email\": \"admin@rusik.gov.my\",\r
+
+    \    // \"email\": \"ahmad@rusik.gov.my\",\r
+
+    \    // \"email\": \"nurul@rusik.gov.my\",\r
+
+    \    \"password\": \"password123\"\r
+
+    \    // \"email\":\"Abagail.Jast4@gmail.com\",\r
+
+    \    // \"password\":\"RahamatU@1223\"\r
+
+    }"
+order: 1000

@@ -1,0 +1,15 @@
+$kind: http-request
+url: "{{base_url}}/v1/super-admin/dashboard/gis/candidates/cmsctzo1s0003d4gvu4u7y65w?electionId=cmsctjugd00vpj8gvkjt0hwem"
+method: GET
+queryParams:
+  - key: electionId
+    value: cmsctjugd00vpj8gvkjt0hwem
+  - key: range
+    value: ""
+    disabled: true
+  - key: limit
+    value: null
+    disabled: true
+auth:
+  type: noauth
+order: 2000

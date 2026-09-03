@@ -1,0 +1,18 @@
+$kind: http-request
+url: "{{base_url}}/v1/coalitions/:coalitionId/parties"
+method: POST
+queryParams:
+  - key: email
+    value: superadmin@rusik.gov.my
+    disabled: true
+  - key: searchTerm
+    value: super
+    disabled: true
+pathVariables:
+  coalitionId: ""
+body:
+  type: json
+  content: "{\r\n   \"partyId\":\"\"\r\n}"
+auth:
+  type: noauth
+order: 7000

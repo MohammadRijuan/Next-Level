@@ -1,0 +1,30 @@
+$kind: http-request
+url: "{{base_url}}/v1/document-categories/cmrlver83000098gv3l2fpe4j"
+method: PATCH
+queryParams:
+  - key: email
+    value: superadmin@rusik.gov.my
+    disabled: true
+  - key: searchTerm
+    value: super
+    disabled: true
+body:
+  type: json
+  content: "{\r
+
+    \    \"name\": \"New Category\",\r
+
+    \    \"slug\": \"new-category\",\r
+
+    \    \"description\": \"Category for new\",\r
+
+    \    \"sortOrder\":6,\r
+
+    \    \"isActive\": true\r
+
+    }"
+auth:
+  type: bearer
+  credentials:
+    token: "{{accessToken}}"
+order: 5000

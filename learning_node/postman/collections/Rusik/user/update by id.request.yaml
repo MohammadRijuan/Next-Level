@@ -1,0 +1,32 @@
+$kind: http-request
+url: "{{base_url}}/v1/users/cmrj4bf9t0001w0gvs9f7ptac"
+method: PATCH
+queryParams:
+  - key: email
+    value: superadmin@rusik.gov.my
+    disabled: true
+  - key: searchTerm
+    value: super
+    disabled: true
+body:
+  type: json
+  content: "{\r
+
+    \    // \"firstName\":\"Nurul Islam\"\r
+
+    \    // \"email\":\"nur@gmail.com\",\r
+
+    \    // \"password\":\"123456\",\r
+
+    \    // \"role\":\"OFFICER\"\r
+
+    \ \"profilePhoto\":\"new.gif\",\r
+
+    \ \"profilePhotoSize\":2052773 \r
+
+    }"
+auth:
+  type: bearer
+  credentials:
+    token: "{{accessToken}}"
+order: 5000

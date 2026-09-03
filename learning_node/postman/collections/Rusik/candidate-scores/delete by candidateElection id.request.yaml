@@ -1,0 +1,29 @@
+$kind: http-request
+url: "{{base_url}}/v1/candidate-scores/:candidateElectionId"
+method: DELETE
+queryParams:
+  - key: status
+    value: APPROVED
+    disabled: true
+  - key: categoryId
+    value: null
+    disabled: true
+  - key: subDistrictId
+    value: null
+    disabled: true
+  - key: districtId
+    value: null
+    disabled: true
+  - key: stateId
+    value: null
+    disabled: true
+  - key: status
+    value: null
+    disabled: true
+pathVariables:
+  candidateElectionId: ""
+auth:
+  type: bearer
+  credentials:
+    token: "{{accessToken}}"
+order: 5000

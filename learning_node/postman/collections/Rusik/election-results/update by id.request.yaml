@@ -1,0 +1,60 @@
+$kind: http-request
+url: "{{base_url}}/v1/election-results/cms0fvrxn0000wsgvkq49y4f5"
+method: PATCH
+queryParams:
+  - key: email
+    value: superadmin@rusik.gov.my
+    disabled: true
+  - key: searchTerm
+    value: super
+    disabled: true
+body:
+  type: json
+  content: "{\r
+
+    \    // \"fullName\": \"Mostafa\",\r
+
+    \    // \"dateOfBirth\": \"1999-05-10\",\r
+
+    \    // \"gender\": \"Male\",\r
+
+    \    // \"phoneNumber\": \"\",\r
+
+    \    // \"email\": \"nurul@gmail.com\",\r
+
+    \    // \"photo\": \"nurul.png\",\r
+
+    \    // \"photoSize\": 20500,\r
+
+    \    \"stateId\":\"cms0fbzld0000xsgv3ri7fdvg\"\r
+
+    \    // \"districtId\": \"\",\r
+
+    \    // \"subDistrictId\": \"\",\r
+
+    \    // \"education\": \"\",\r
+
+    \    // \"professionalBackground\": \"\",\r
+
+    \    // \"politicalExperience\": \"\",\r
+
+    \    // \"campaignTagline\": \"\",\r
+
+    \    // \"keyStrengths\": \"\",\r
+
+    \    // \"primaryFocusArea\": \"\",\r
+
+    \    // \"yearsInPolitics\": \"\",\r
+
+    \    // \"facebookLink\": \"\",\r
+
+    \    // \"xLink\": \"\",\r
+
+    \    // \"instagramLink\": \"\",\r
+
+    \    // \"websiteLink\": \"\"\r
+
+    }"
+auth:
+  type: noauth
+order: 8000

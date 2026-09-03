@@ -1,0 +1,17 @@
+$kind: http-request
+url: "{{base_url}}/v1/candidates/options"
+method: GET
+queryParams:
+  - key: searchTerm
+    value: ASPIRASI
+    disabled: true
+  - key: positionContesting
+    value: STATE_GOVERNMENT
+    disabled: true
+body:
+  type: json
+  content: ""
+auth:
+  type: noauth
+settings: {}
+order: 5000

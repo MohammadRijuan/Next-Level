@@ -1,0 +1,31 @@
+$kind: http-request
+url: "{{base_url}}/v1/user-roles/:userId/:roleId"
+method: DELETE
+queryParams:
+  - key: email
+    value: superadmin@rusik.gov.my
+    disabled: true
+  - key: searchTerm
+    value: super
+    disabled: true
+pathVariables:
+  userId: ""
+  roleId: ""
+body:
+  type: json
+  content: "{\r
+
+    \    \"firstName\":\"Nurul\",\r
+
+    \    \"email\":\"nur@gmail.com\",\r
+
+    \    \"password\":\"123456\",\r
+
+    \    \"role\":\"OFFICER\"\r
+
+    }"
+auth:
+  type: bearer
+  credentials:
+    token: "{{accessToken}}"
+order: 3000

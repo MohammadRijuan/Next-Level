@@ -1,0 +1,40 @@
+$kind: http-request
+url: "{{base_url}}/v1/documents"
+method: POST
+queryParams:
+  - key: email
+    value: superadmin@rusik.gov.my
+    disabled: true
+  - key: searchTerm
+    value: super
+    disabled: true
+body:
+  type: json
+  content: "{\r
+
+    \    \"documentTitle\": \"New Document\",\r
+
+    \    \"documentDate\": \"2020-07-15T15:00:00Z\",\r
+
+    \    \"stateId\": \"cmrnjfb540000swgvkjzzjg43\",\r
+
+    \    \"districtId\": \"cmrnjfbbq0018swgva67wn6dc\",\r
+
+    \    \"subDistrictId\": \"cmrnjfbcg001dswgvzow7pau3\",\r
+
+    \    \"documentCategoryId\": \"cmrnjgo2z0058eggvlnsiufw2\",\r
+
+    \    // \"electionId\":\"cmrnjgo2z0058eggvlnsiu245\",\r
+
+    \    \"notes\": \"Document of 15 July 2026\",\r
+
+    \    \"filename\": \"doc.pdf\",\r
+
+    \    \"fileSize\": 2692\r
+
+    }"
+auth:
+  type: bearer
+  credentials:
+    token: "{{accessToken}}"
+order: 2000

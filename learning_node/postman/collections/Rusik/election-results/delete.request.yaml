@@ -1,0 +1,28 @@
+$kind: http-request
+url: "{{base_url}}/v1/election-results/cmrkedr360001akgvfp0bo92q"
+method: DELETE
+queryParams:
+  - key: email
+    value: superadmin@rusik.gov.my
+    disabled: true
+  - key: searchTerm
+    value: super
+    disabled: true
+body:
+  type: json
+  content: "{\r
+
+    \    \"firstName\":\"Nurul\",\r
+
+    \    \"email\":\"nur@gmail.com\",\r
+
+    \    \"password\":\"123456\",\r
+
+    \    \"role\":\"OFFICER\"\r
+
+    }"
+auth:
+  type: bearer
+  credentials:
+    token: "{{accessToken}}"
+order: 9000

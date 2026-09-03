@@ -1,0 +1,28 @@
+$kind: http-request
+url: "{{base_url}}/v1/seats"
+method: POST
+queryParams:
+  - key: email
+    value: superadmin@rusik.gov.my
+    disabled: true
+  - key: searchTerm
+    value: super
+    disabled: true
+body:
+  type: json
+  content: "{\r
+
+    \    \"name\":\"\",\r
+
+    \    \"slug\":\"\",\r
+
+    \    \"type\":\"\",\r
+
+    \    \"stateId\":\"\"\r
+
+    }"
+auth:
+  type: bearer
+  credentials:
+    token: "{{accessToken}}"
+order: 2000

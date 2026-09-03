@@ -1,0 +1,35 @@
+$kind: http-request
+url: "{{base_url}}/v1/states/options?searchTerm=ke"
+method: GET
+queryParams:
+  - key: email
+    value: superadmin@rusik.gov.my
+    disabled: true
+  - key: searchTerm
+    value: super
+    disabled: true
+  - key: sortBy
+    value: createdAt
+    disabled: true
+  - key: sortOrder
+    value: desc
+    disabled: true
+  - key: limit
+    value: "2"
+    disabled: true
+  - key: page
+    value: "1"
+    disabled: true
+  - key: status
+    value: INACTIVE
+    disabled: true
+  - key: withDeleted
+    value: "true"
+    disabled: true
+  - key: searchTerm
+    value: ke
+auth:
+  type: bearer
+  credentials:
+    token: "{{accessToken}}"
+order: 2000

@@ -1,0 +1,38 @@
+$kind: http-request
+url: "{{base_url}}/v1/documents/cmrm7tamr00017sgvjz97g6kl"
+method: DELETE
+queryParams:
+  - key: email
+    value: superadmin@rusik.gov.my
+    disabled: true
+  - key: searchTerm
+    value: super
+    disabled: true
+body:
+  type: json
+  content: "{\r
+
+    \    \"documentTitle\": \"New Document\",\r
+
+    \    \"documentDate\": \"2020-07-15T15:00:00Z\",\r
+
+    \    \"stateId\": \"cmrm07vcr0000vkgvyy2ihuwy\",\r
+
+    \    \"districtId\": \"cmrm07vg3000gvkgv02vn2y7f\",\r
+
+    \    \"subDistrictId\": \"cmrm07vgb000hvkgvib224sn9\",\r
+
+    \    \"documentCategoryId\": \"cmrm2h54p0001xkgvgfo36kxj\",\r
+
+    \    \"notes\": \"string\",\r
+
+    \    \"fileKey\": \"string\",\r
+
+    \    \"fileSize\": 1977049\r
+
+    }"
+auth:
+  type: bearer
+  credentials:
+    token: "{{accessToken}}"
+order: 6000

@@ -1,0 +1,46 @@
+$kind: http-request
+url: "{{base_url}}/v1/dlq"
+method: GET
+queryParams:
+  - key: email
+    value: superadmin@rusik.gov.my
+    disabled: true
+  - key: searchTerm
+    value: super
+    disabled: true
+  - key: withDeleted
+    value: "true"
+    disabled: true
+  - key: sortBy
+    value: createdAt
+    disabled: true
+  - key: sortOrder
+    value: desc
+    disabled: true
+  - key: status
+    value: REJECTED
+    disabled: true
+  - key: status
+    value: APPROVED
+    disabled: true
+body:
+  type: json
+  content: "{\r
+
+    \    \"sessionId\":\"{{session_id}}\",\r
+
+    \    \"title\":\"Document title\",\r
+
+    \    \"documentDate\":\"Data\",\r
+
+    \    \"categoryId\":\"categoryfdklsd\",\r
+
+    \    \"reportType\":\"Officer Report\",\r
+
+    \    \"status\":\"SUBMITTED\"\r
+
+    }"
+auth:
+  type: noauth
+settings: {}
+order: 1000

@@ -1,0 +1,25 @@
+$kind: http-request
+url: "{{base_url}}/v1/candidates/import/cmsc0aegd03d060gv50qxyc50"
+method: GET
+queryParams:
+  - key: id
+    value: superadmin@rusik.gov.my
+    disabled: true
+  - key: searchTerm
+    value: super
+    disabled: true
+  - key: name
+    value: createdAt
+    disabled: true
+  - key: slug
+    value: desc
+    disabled: true
+  - key: type
+    value: "2"
+    disabled: true
+  - key: stateId
+    value: cmrnjfb6k0009swgvd3ze6mjb
+    disabled: true
+auth:
+  type: noauth
+order: 3000

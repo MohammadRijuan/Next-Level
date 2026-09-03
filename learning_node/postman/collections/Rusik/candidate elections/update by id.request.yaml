@@ -1,0 +1,26 @@
+$kind: http-request
+url: "{{base_url}}/v1/candidate-elections/cms0fvrxn0000wsgvkq49y4f5"
+method: PATCH
+queryParams:
+  - key: email
+    value: superadmin@rusik.gov.my
+    disabled: true
+  - key: searchTerm
+    value: super
+    disabled: true
+body:
+  type: json
+  content: "{\r
+
+    \    \"candidateId\":\"\",\r
+
+    \    \"electionId\":\"\",\r
+
+    \    \"seatId\":\"\",\r
+
+    \    \"politicalPartyId\":\"\" //optional\r
+
+    }"
+auth:
+  type: noauth
+order: 4000

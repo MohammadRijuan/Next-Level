@@ -1,0 +1,30 @@
+$kind: http-request
+url: "{{base_url}}/v1/age-group"
+method: POST
+queryParams:
+  - key: email
+    value: superadmin@rusik.gov.my
+    disabled: true
+  - key: searchTerm
+    value: super
+    disabled: true
+body:
+  type: json
+  content: "{\r
+
+    \  \"candidateId\":\"\",\r
+
+    \  \"electionId\":\"\",\r
+
+    \  \"seatId\":\"\",\r
+
+    \  \"politicalPartyId\":\"\"\r
+
+    \      // \"electionCode\":\"GE-14\"\r
+
+    \r
+
+    }"
+auth:
+  type: noauth
+order: 3000

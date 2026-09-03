@@ -1,0 +1,38 @@
+$kind: http-request
+url: "{{base_url}}/v1/research/cmrnknezz0006k8gv1rw733hr/process"
+method: POST
+queryParams:
+  - key: email
+    value: superadmin@rusik.gov.my
+    disabled: true
+  - key: searchTerm
+    value: super
+    disabled: true
+body:
+  type: json
+  content: "{\r
+
+    \    \"documentTitle\": \"New Research\",\r
+
+    \    \"documentDate\": \"2020-07-15T15:00:00Z\",\r
+
+    \    \"stateId\": \"cmrma14jc0000g8gvg27lryd4\",\r
+
+    \    \"districtId\": \"cmrma14lr000gg8gv6cerlpls\",\r
+
+    \    \"subDistrictId\": \"cmrma14lw000hg8gvv29ny4m8\",\r
+
+    \    \"documentCategoryId\": \"cmrma1560005cg8gvguxakfo9\",\r
+
+    \    \"notes\": \"Nothing\",\r
+
+    \    \"filename\": \"doc.csv\",\r
+
+    \    \"fileSize\": 10992\r
+
+    }"
+auth:
+  type: bearer
+  credentials:
+    token: "{{accessToken}}"
+order: 3000

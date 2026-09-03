@@ -1,0 +1,26 @@
+$kind: http-request
+url: "{{base_url}}/v1/parties/options?uid=063-AKAR"
+method: GET
+queryParams:
+  - key: searchTerm
+    value: ASPIRASI
+    disabled: true
+  - key: uid
+    value: 063-AKAR
+body:
+  type: json
+  content: "{\r
+
+    \    \"firstName\":\"Nurul\",\r
+
+    \    \"email\":\"nur@gmail.com\",\r
+
+    \    \"password\":\"123456\",\r
+
+    \    \"role\":\"OFFICER\"\r
+
+    }"
+auth:
+  type: noauth
+settings: {}
+order: 4000

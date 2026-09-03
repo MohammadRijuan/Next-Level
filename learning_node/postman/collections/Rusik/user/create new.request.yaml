@@ -1,0 +1,30 @@
+$kind: http-request
+url: "{{base_url}}/v1/users"
+method: POST
+queryParams:
+  - key: email
+    value: superadmin@rusik.gov.my
+    disabled: true
+  - key: searchTerm
+    value: super
+    disabled: true
+body:
+  type: json
+  content: "{\r
+
+    \    \"firstName\":\"Nurul\",\r
+
+    \    \"email\":\"{{$randomUserName}}@gmail.com\",\r
+
+    \    \"password\":\"123456\",\r
+
+    \    \"role\":\"OFFICER\",\r
+
+    \    \"profilePhoto\":\"greetings.png\",\r
+
+    \    \"profilePhotoSize\": 1977049\r
+
+    }"
+auth:
+  type: noauth
+order: 2000

@@ -1,0 +1,10 @@
+$kind: http-request
+url: "{{base_url}}/v1/super-admin/dashboard/gis/map/areas/cmsctjrtu0051j8gvbga6vfyh"
+method: GET
+queryParams:
+  - key: range
+    value: null
+    disabled: true
+auth:
+  type: noauth
+order: 5000

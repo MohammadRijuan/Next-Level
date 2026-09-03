@@ -1,0 +1,16 @@
+$kind: http-request
+url: "{{base_url}}/v1/age-group/cms0fvrxn0000wsgvkq49y4f5"
+method: PATCH
+queryParams:
+  - key: email
+    value: superadmin@rusik.gov.my
+    disabled: true
+  - key: searchTerm
+    value: super
+    disabled: true
+body:
+  type: json
+  content: ""
+auth:
+  type: noauth
+order: 4000

@@ -1,0 +1,32 @@
+$kind: http-request
+url: "{{base_url}}/v1/candidate-scores/recalculate"
+method: POST
+queryParams:
+  - key: status
+    value: APPROVED
+    disabled: true
+  - key: categoryId
+    value: null
+    disabled: true
+  - key: subDistrictId
+    value: null
+    disabled: true
+  - key: districtId
+    value: null
+    disabled: true
+  - key: stateId
+    value: null
+    disabled: true
+  - key: status
+    value: null
+    disabled: true
+body:
+  type: json
+  content: "{\r
+
+    \    \"electionId\":\"cmsctjugd00vpj8gvkjt0hwem\"\r
+
+    }"
+auth:
+  type: noauth
+order: 2000

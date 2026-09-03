@@ -1,0 +1,16 @@
+$kind: http-request
+url: "{{base_url}}/v1/elections/cms0fe9cr0001x4gvoyjnbqif"
+method: PATCH
+queryParams:
+  - key: email
+    value: superadmin@rusik.gov.my
+    disabled: true
+  - key: searchTerm
+    value: super
+    disabled: true
+body:
+  type: json
+  content: ""
+auth:
+  type: noauth
+order: 5000

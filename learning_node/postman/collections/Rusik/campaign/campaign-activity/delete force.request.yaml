@@ -1,0 +1,16 @@
+$kind: http-request
+url: "{{base_url}}/v1/campaign-activities/cms1i6t0500008kgv9tcfalcc"
+method: DELETE
+queryParams:
+  - key: email
+    value: superadmin@rusik.gov.my
+    disabled: true
+  - key: searchTerm
+    value: super
+    disabled: true
+body:
+  type: json
+  content: ""
+auth:
+  type: noauth
+order: 5000

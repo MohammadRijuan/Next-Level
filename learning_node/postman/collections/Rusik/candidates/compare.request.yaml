@@ -1,0 +1,35 @@
+$kind: http-request
+url: "{{base_url}}/v1/candidates/compare?candidateId1=CAN-HASHIM-HT3&candidateId2=CAN-TAY-Y6X"
+method: GET
+queryParams:
+  - key: id
+    value: superadmin@rusik.gov.my
+    disabled: true
+  - key: searchTerm
+    value: super
+    disabled: true
+  - key: name
+    value: createdAt
+    disabled: true
+  - key: slug
+    value: desc
+    disabled: true
+  - key: type
+    value: "2"
+    disabled: true
+  - key: stateId
+    value: cmrnjfb6k0009swgvd3ze6mjb
+    disabled: true
+  - key: limit
+    value: "1000"
+    disabled: true
+  - key: searchTerm
+    value: Nurul Huda Binti Karim
+    disabled: true
+  - key: candidateId1
+    value: CAN-HASHIM-HT3
+  - key: candidateId2
+    value: CAN-TAY-Y6X
+auth:
+  type: noauth
+order: 3000

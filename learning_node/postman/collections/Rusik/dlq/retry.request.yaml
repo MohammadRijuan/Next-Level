@@ -1,0 +1,26 @@
+$kind: http-request
+url: "{{base_url}}/v1/dlq/cmrn7ygby00013ggvaxhpyb5r/retry"
+method: POST
+queryParams:
+  - key: email
+    value: superadmin@rusik.gov.my
+    disabled: true
+  - key: searchTerm
+    value: super
+    disabled: true
+body:
+  type: json
+  content: "{\r
+
+    \    \"status\":\"APPROVED\"\r
+
+    \    // \"status\":\"REJECTED\",\r
+
+    \    // \"rejectionReason\":\"Needs full audit report\"\r
+
+    }"
+auth:
+  type: bearer
+  credentials:
+    token: "{{accessToken}}"
+order: 4000

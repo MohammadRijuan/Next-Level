@@ -1,0 +1,24 @@
+$kind: http-request
+url: "{{base_url}}/v1/user-roles"
+method: POST
+queryParams:
+  - key: email
+    value: superadmin@rusik.gov.my
+    disabled: true
+  - key: searchTerm
+    value: super
+    disabled: true
+body:
+  type: json
+  content: "{\r
+
+    \    \"userId\":\"cmrkedr360001akgvfp0bo92q\",\r
+
+    \    \"roleId\":\"cmrkedr360001akgvfp0bo458\"\r
+
+    }"
+auth:
+  type: bearer
+  credentials:
+    token: "{{accessToken}}"
+order: 1000

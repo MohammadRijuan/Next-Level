@@ -1,0 +1,21 @@
+$kind: http-request
+url: "{{base_url}}/v1/auth/sessions"
+method: GET
+queryParams:
+  - key: email
+    value: superadmin@rusik.gov.my
+    disabled: true
+  - key: searchTerm
+    value: super
+    disabled: true
+body:
+  type: json
+  content: "{\r
+
+    \    \"refreshToken\":\"{{refreshToken}}\"\r
+
+    }"
+auth:
+  type: noauth
+settings: {}
+order: 6000

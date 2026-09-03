@@ -1,0 +1,28 @@
+$kind: http-request
+url: "{{base_url}}/v1/coalitions"
+method: POST
+queryParams:
+  - key: email
+    value: superadmin@rusik.gov.my
+    disabled: true
+  - key: searchTerm
+    value: super
+    disabled: true
+body:
+  type: json
+  content: "{\r
+
+    \    \"name\": \"People's Justice Movement\",\r
+
+    \    \"acronym\": \"AKAR\",\r
+
+    \    \"electionId\":\"cms4lzgbp00s33os0hwsxumxu\",\r
+
+    \    \"parentPartyId\": \"cms4lzgbp00s33os0hwsxumxe\"\r
+
+    \    // \"memberPartyIds\": [\"\"]\r
+
+    }"
+auth:
+  type: noauth
+order: 2000

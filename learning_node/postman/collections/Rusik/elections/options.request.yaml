@@ -1,0 +1,24 @@
+$kind: http-request
+url: "{{base_url}}/v1/elections/options"
+method: GET
+queryParams:
+  - key: searchTerm
+    value: ASPIRASI
+    disabled: true
+body:
+  type: json
+  content: "{\r
+
+    \    \"firstName\":\"Nurul\",\r
+
+    \    \"email\":\"nur@gmail.com\",\r
+
+    \    \"password\":\"123456\",\r
+
+    \    \"role\":\"OFFICER\"\r
+
+    }"
+auth:
+  type: noauth
+settings: {}
+order: 3000

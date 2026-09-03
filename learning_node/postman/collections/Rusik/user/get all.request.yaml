@@ -1,0 +1,29 @@
+$kind: http-request
+url: "{{base_url}}/v1/users?sortBy=createdAt&sortOrder=desc"
+method: GET
+queryParams:
+  - key: email
+    value: superadmin@rusik.gov.my
+    disabled: true
+  - key: searchTerm
+    value: super
+    disabled: true
+  - key: sortBy
+    value: createdAt
+  - key: sortOrder
+    value: desc
+  - key: limit
+    value: "2"
+    disabled: true
+  - key: page
+    value: "1"
+    disabled: true
+  - key: status
+    value: INACTIVE
+    disabled: true
+  - key: withDeleted
+    value: "true"
+    disabled: true
+auth:
+  type: noauth
+order: 1000

@@ -1,0 +1,26 @@
+$kind: http-request
+url: "{{base_url}}/v1/elections"
+method: POST
+queryParams:
+  - key: email
+    value: superadmin@rusik.gov.my
+    disabled: true
+  - key: searchTerm
+    value: super
+    disabled: true
+body:
+  type: json
+  content: "{\r
+
+    \  \"code\":\"\",\r
+
+    \  \"type\":\"\",\r
+
+    \  \"date\":\"\",\r
+
+    \  \"stateId\":\"\"\r
+
+    }"
+auth:
+  type: noauth
+order: 2000

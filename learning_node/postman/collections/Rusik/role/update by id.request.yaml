@@ -1,0 +1,54 @@
+$kind: http-request
+url: "{{base_url}}/v1/roles/cmrniqams00569xp5c2pavoo5"
+method: PATCH
+queryParams:
+  - key: email
+    value: superadmin@rusik.gov.my
+    disabled: true
+  - key: searchTerm
+    value: super
+    disabled: true
+body:
+  type: json
+  content: "{\r
+
+    \    // \"name\": \"Researcher\",\r
+
+    \    // \"slug\": \"researcher\",\r
+
+    \    // \"description\": \"Research and submit report\",\r
+
+    \    // \"isSystem\": false,\r
+
+    \    \"rules\":[\r
+
+    \                \"analytics:*\",\r
+
+    \                \"campaign:*\",\r
+
+    \                \"dashboard:*\",\r
+
+    \                \"district:*\",\r
+
+    \                \"document:*\",\r
+
+    \                \"role:read\",\r
+
+    \                \"roleAssignment:read\",\r
+
+    \                \"state:view\",\r
+
+    \                \"sub_district:*\",\r
+
+    \                \"user:*\",\r
+
+    \                \"document_category:view\"\r
+
+    \            ]\r
+
+    }"
+auth:
+  type: bearer
+  credentials:
+    token: "{{accessToken}}"
+order: 4000

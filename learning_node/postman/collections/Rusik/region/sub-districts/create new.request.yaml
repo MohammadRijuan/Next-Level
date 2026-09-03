@@ -1,0 +1,26 @@
+$kind: http-request
+url: "{{base_url}}/v1/sub-districts"
+method: POST
+queryParams:
+  - key: email
+    value: superadmin@rusik.gov.my
+    disabled: true
+  - key: searchTerm
+    value: super
+    disabled: true
+body:
+  type: json
+  content: "{\r
+
+    \    \"districtId\":\"cmrlmn3qz002s4wgveeld2rnq\",\r
+
+    \    \"name\":\"Kabirhat\",\r
+
+    \    \"code\":\"kabirhat\"\r
+
+    }"
+auth:
+  type: bearer
+  credentials:
+    token: "{{accessToken}}"
+order: 3000
