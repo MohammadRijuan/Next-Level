@@ -6,10 +6,15 @@ import config from "../../config";
 import { jwtUtils } from "../../utils/jwt";
 
 const loginService = async (payload: IloginUser) => {
+
   const { email, password } = payload;
   const user = await prisma.user.findUniqueOrThrow({
     where: { email },
   });
+
+  if(user.activeStatus === "BLOCKED"){
+        throw new Error("Your account has been blocked.please contact support")
+    }
 
   const isPasswordMatched = await bcrypt.compare(password, user.password);
 
@@ -24,42 +29,48 @@ const loginService = async (payload: IloginUser) => {
     role: user.role,
   };
 
-//   const accessToken = jwt.sign(
-//     jwtPayload,
-//     config.jwt_access_secret!,
-//     {
-//       expiresIn: config.jwt_access_expires_in,
-//     } as SignOptions, // for type assertion to remove error of jwt.sign
-//   );
+  //   const accessToken = jwt.sign(
+  //     jwtPayload,
+  //     config.jwt_access_secret!,
+  //     {
+  //       expiresIn: config.jwt_access_expires_in,
+  //     } as SignOptions, // for type assertion to remove error of jwt.sign
+  //   );
 
-// better alternative
 
-const accessToken = jwtUtils.createToken(
+  // better alternative
+  const accessToken = jwtUtils.createToken(
     jwtPayload,
-    config.jwt_access_secret!,
-    config.jwt_access_expires_in! as SignOptions
-)
+    config.jwt_access_secret,
+    config.jwt_access_expires_in as SignOptions,
+  );
 
-//   const refreshToken = jwt.sign(
-//     jwtPayload,
-//     config.jwt_refresh_secret!,
-//     {
-//       expiresIn: config.jwt_refresh_expires_in,
-//     } as SignOptions, // for type assertion to remove error of jwt.sign
-//   );
 
-// better alternative 
-const refreshToken = jwtUtils.createToken(
+
+
+  //   const refreshToken = jwt.sign(
+  //     jwtPayload,
+  //     config.jwt_refresh_secret!,
+  //     {
+  //       expiresIn: config.jwt_refresh_expires_in,
+  //     } as SignOptions, // for type assertion to remove error of jwt.sign
+  //   );
+
+
+  // better alternative
+  const refreshToken = jwtUtils.createToken(
     jwtPayload,
-    config.jwt_refresh_secret!,
-    config.jwt_refresh_expires_in! as SignOptions
-)
+    config.jwt_refresh_secret,
+    config.jwt_refresh_expires_in as SignOptions,
+  );
 
   return {
     accessToken,
     refreshToken,
   };
 };
+
+
 
 export const authService = {
   loginService,
