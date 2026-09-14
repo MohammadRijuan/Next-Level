@@ -1,0 +1,4 @@
+$kind: http-request
+url: http://localhost:5000/api/posts/2f96ed26-64a4-4170-b118-b8cab7a51478
+method: DELETE
+order: 4289387704103459

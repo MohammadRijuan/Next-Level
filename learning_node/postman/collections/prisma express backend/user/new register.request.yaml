@@ -1,4 +1,17 @@
 $kind: http-request
-url: ""
-method: GET
+url: http://localhost:5000/api/user/register
+method: POST
+body:
+  type: json
+  content: "{ \r
+
+    \    \"name\":\"abul101\",\r
+
+    \    \"email\":\"abc101@gmail.com\",\r
+
+    \    \"password\":\"123456\",\r
+
+    \    \"profilePhoto\":\"www.google.com\"\r
+
+    }"
 order: 1788791137818

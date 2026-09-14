@@ -15,7 +15,7 @@ router.get('/',postController.getAllPosts)
 router.get('/stats',authMiddleware(Role.ADMIN,Role.USER,Role.AUTHOR),postController.getPostsStats)
 
 // my post
-router.get("my-posts",authMiddleware(Role.ADMIN,Role.USER,Role.AUTHOR),postController.getMyPosts)
+router.get("/my-posts",authMiddleware(Role.ADMIN,Role.USER,Role.AUTHOR),postController.getMyPosts)
 
 // get post by id
 router.get('/:postId',postController.getPostById);
