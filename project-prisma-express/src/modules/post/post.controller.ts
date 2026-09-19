@@ -7,6 +7,9 @@ import httpsStatus from "http-status"
 
 // creating post
 const addPost=catchAsync(async(req:Request,res:Response,next:NextFunction)=>{
+
+    const query = req.query;
+    console.log(query)
     
     const id = req.user?.id
 
