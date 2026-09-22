@@ -8,8 +8,6 @@ import httpsStatus from "http-status"
 // creating post
 const addPost=catchAsync(async(req:Request,res:Response,next:NextFunction)=>{
 
-    const query = req.query;
-    console.log(query)
     
     const id = req.user?.id
 
@@ -29,7 +27,9 @@ const addPost=catchAsync(async(req:Request,res:Response,next:NextFunction)=>{
 // get all post
 const getAllPosts=catchAsync(async(req:Request,res:Response,next:NextFunction)=>{
 
-    const result = await postService.getAllPostsService()
+    const query = req.query;
+    const result = await postService.getAllPostsService(query)
+    console.log(query)
 
     sendResponse(res,{
         success:true,

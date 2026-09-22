@@ -2,7 +2,11 @@ import { title } from "node:process";
 import { CommentStatus, PostStatus } from "../../../generated/prisma/enums";
 import { PostWhereInput } from "../../../generated/prisma/models";
 import { prisma } from "../../lib/prisma";
-import { IAddPostPayload, IPostQuery, IUpdatePostPayload } from "./post.interface";
+import {
+  IAddPostPayload,
+  IPostQuery,
+  IUpdatePostPayload,
+} from "./post.interface";
 
 const addPostService = async (payload: IAddPostPayload, userId: string) => {
   const result = await prisma.post.create({
@@ -15,11 +19,7 @@ const addPostService = async (payload: IAddPostPayload, userId: string) => {
   return result;
 };
 
-
-
-
-const getAllPostsService = async (query : IPostQuery) => {
-
+const getAllPostsService = async (query: IPostQuery) => {
   const limit = query.limit ? Number(query.limit) : 10;
   const page = query.page ? Number(query.page) : 1;
   const skip = (page - 1) * limit;
@@ -27,53 +27,111 @@ const getAllPostsService = async (query : IPostQuery) => {
   const sortOrder = query.sortOrder ? query.sortOrder : "desc";
 
 
-  const posts = await prisma.post.findMany({
 
-    // for search related or filtering or sorting
-    where:{
-      AND:[
+  const tags = query.tags ? JSON.parse(query.tags as string) : null;
+  const tagsArray = Array.isArray(tags) ? tags : []
+  console.log(tagsArray,"tagsArray");
 
-        query.searchTerm ? {
-          OR : [{
+  const andConditions: PostWhereInput[] = [];
 
-            title: {
-              contains : query.searchTerm,
-              mode : "insensitive"
-            },
+  if (query.searchTerm) {
+    andConditions.push({
+      OR: [
+        {
+          title: {
+            contains: query.searchTerm,
+            mode: "insensitive",
           },
-          {
-            content: {
-              contains : query.searchTerm,
-              mode : "insensitive"
-            },
-          }
-        ]
-        } : {},
+        },
+        {
+          content: {
+            contains: query.searchTerm,
+            mode: "insensitive",
+          },
+        },
+      ],
+    });
+  }
+
+  if (query.title){
+    andConditions.push({
+      title: query.title
+    })
+  }
 
 
+  if (query.content){
+    andConditions.push({
+      content: query.content
+    })
+  }
 
 
+  if (query.isFeatured){
+    andConditions.push({
+      isFeatured: Boolean(query.isFeatured)
+    })
+  }
 
-        // title filtering
-        query.title ? { title : query.title} : {},
-        
-        // content filtering
-        query.content ? { content : query.content},
 
-      ]
+  if (query.tags){
+    andConditions.push({
+      tags: {
+        hasSome: tagsArray
+      }
+    })
+  }
+
+  if (query.status){
+    andConditions.push({
+      status: query.status
+    })
+  }
+
+
+  const posts = await prisma.post.findMany({
+    // for search related or filtering or sorting
+    // where:{
+    //   AND:[
+
+    //     query.searchTerm ? {
+    //       OR : [{
+
+    //         title: {
+    //           contains : query.searchTerm,
+    //           mode : "insensitive"
+    //         },
+    //       },
+    //       {
+    //         content: {
+    //           contains : query.searchTerm,
+    //           mode : "insensitive"
+    //         },
+    //       }
+    //     ]
+    //     } : {},
+
+    //     // title filtering
+    //     query.title ? { title : query.title} : {},
+
+    //     // content filtering
+    //     query.content ? { content : query.content} : {},
+
+    //   ]
+    // },
+
+    // optimizing search related or filtering or sorting for better output
+    where: {
+      AND: andConditions,
     },
 
-    take : limit,
-    skip : skip,
+    take: limit,
+    skip: skip,
 
-    orderBy : {
+    orderBy: {
       // sortby : sortOrder
-      [sortBy] : sortOrder
-
+      [sortBy]: sortOrder,
     },
-
-
-    
 
     // to get all post
     include: {
@@ -172,7 +230,6 @@ const getPostsStats = async () => {
       totalRejectedComments,
       totalPostViewAggregate,
     ] = await Promise.all([
-      
       await tx.post.count(),
 
       await tx.post.count({
