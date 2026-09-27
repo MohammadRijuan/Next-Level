@@ -10,9 +10,10 @@ model User {
   profileId    Profile?
 
   // connecting comment model
-  comments Comment[]
+  comments     Comment[]
   // connecting post model
-  posts    Post[]
+  posts        Post[]
+  subscription Subscription?
 
   // rename table
   @@map("users")
