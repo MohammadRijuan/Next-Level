@@ -9,6 +9,24 @@ import {
 } from "./post.interface";
 
 const addPostService = async (payload: IAddPostPayload, userId: string) => {
+
+  // to remove premium post...we will do it when we implement premium rellated posts api
+  const user = await prisma.user.findUniqueOrThrow({
+    where :{
+      id : userId
+    },
+    include :{
+      subscription:true
+    }
+  })
+
+  if (payload.isPremium && user.subscription?.status !== "ACTIVE"){
+    throw new Error("You are not premium user ...so you can not get premium content")
+
+  }
+
+
+
   const result = await prisma.post.create({
     data: {
       ...payload,
@@ -20,6 +38,8 @@ const addPostService = async (payload: IAddPostPayload, userId: string) => {
 };
 
 const getAllPostsService = async (query: IPostQuery) => {
+
+
   const limit = query.limit ? Number(query.limit) : 10;
   const page = query.page ? Number(query.page) : 1;
   const skip = (page - 1) * limit;
@@ -87,6 +107,12 @@ const getAllPostsService = async (query: IPostQuery) => {
       status: query.status
     })
   }
+  
+
+  // to remove premium post from getting all post..we will do it when we implement premium rellated posts api
+  andConditions.push({
+    isPremium:false
+  })
 
 
   const posts = await prisma.post.findMany({
@@ -144,7 +170,24 @@ const getAllPostsService = async (query: IPostQuery) => {
     },
   });
 
-  return posts;
+
+  const totalPostCount = await prisma.post.count({
+    where :{
+      AND: andConditions
+    }
+  })
+
+  return {
+    data:posts,
+    meta:{
+      page : page,
+      limit: limit,
+      total : totalPostCount,
+      totalPages : Math.ceil(totalPostCount / limit)
+    }
+  };
+
+  
 };
 
 const getPostsStats = async () => {
@@ -361,6 +404,7 @@ const getPostByIdService = async (postId: string) => {
     await tx.post.update({
       where: {
         id: postId,
+        
       },
       data: {
         views: {
@@ -375,6 +419,8 @@ const getPostByIdService = async (postId: string) => {
     const post = await tx.post.findUniqueOrThrow({
       where: {
         id: postId,
+        // to remove premium post...we will do it when we implement premium rellated posts api
+        isPremium:false
       },
       include: {
         author: {
