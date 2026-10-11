@@ -1,0 +1,15 @@
+$kind: http-request
+url: https://rent-nest-rho-lyart.vercel.app/api/rentals
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \  \"property_id\": \"4e90351f-6845-43b1-a1c2-ce2dd411b0b8\",\r
+
+    \  \"move_in_date\": \"2027-11-01T00:00:00.000Z\",\r
+
+    \  \"message\": \"I am interested in renting of abul mia property.\"\r
+
+    }"
+order: 3939534275631334

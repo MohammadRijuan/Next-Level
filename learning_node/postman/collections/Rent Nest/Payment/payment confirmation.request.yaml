@@ -1,0 +1,19 @@
+$kind: http-request
+url: http://localhost:5000/api/payments/confirm
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \  \"status\": \"VALID\",\r
+
+    \  \"tran_id\": \"Rent - 1791194247949-4328\",\r
+
+    \  \"val_id\": \"261005160120oNnF3tgmtddMe7V\",\r
+
+    \  \"amount\": \"25000\",\r
+
+    \  \"currency\": \"BDT\"\r
+
+    }"
+order: 1420330880693488

@@ -1,0 +1,13 @@
+$kind: http-request
+url: https://rent-nest-rho-lyart.vercel.app/api/reviews
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \  \"property_id\": \"4e90351f-6845-43b1-a1c2-ce2dd411b0b8\",\r
+
+    \  \"comment\": \"The property is really good and the location is convenient.\"\r
+
+    }"
+order: 4481438802110830

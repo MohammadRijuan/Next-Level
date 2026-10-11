@@ -1,0 +1,25 @@
+$kind: http-request
+url: http://localhost:5000/api/landlord/properties/df754f0d-13f2-4d46-aefc-4dd837f014ee
+method: PUT
+body:
+  type: json
+  content: "{\r
+
+    \  \"category_id\": \"c380d546-9dac-477e-aa20-bd93f6d397c3\",\r
+
+    \  \"titles\": \"my updated second Apartment\",\r
+
+    \  \"description\": \"A spacious and modern apartment located in a peaceful area with easy access to schools, markets, and transportation.\",\r
+
+    \  \"location\": \"Chattograms, Bangladesh\",\r
+
+    \  \"rent\": 25000,\r
+
+    \  \"bedrooms\": 3,\r
+
+    \  \"bathrooms\": 2,\r
+
+    \  \"amenities\": \"WiFi, Parking, Lift, Security\"\r
+
+    }"
+order: 902381270631937

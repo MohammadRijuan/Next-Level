@@ -1,0 +1,4 @@
+$kind: http-request
+url: https://rent-nest-rho-lyart.vercel.app/api/rentals/07f7469c-3d55-4b1e-8013-f44931c1ac83
+method: GET
+order: 4285445402922328

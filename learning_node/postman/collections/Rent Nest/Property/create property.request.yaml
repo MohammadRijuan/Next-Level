@@ -1,0 +1,4 @@
+$kind: http-request
+url: http://localhost:5000/api/landlord/properties
+method: POST
+order: 1790839568373
