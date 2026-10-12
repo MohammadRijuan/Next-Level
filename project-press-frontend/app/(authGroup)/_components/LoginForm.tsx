@@ -13,9 +13,14 @@ const LoginForm = () => {
 
     if(!state) return;
 
+    // if(state.success){
+    //   toast.success(state.message || "Login successful")
+    // }
+
     if(!state.success){
       toast.error(state.message || "Login failed")
     }
+    
   },[state])
   return (
     <form action={action} >
